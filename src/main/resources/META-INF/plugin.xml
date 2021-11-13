@@ -1,0 +1,25 @@
+<idea-plugin>
+  <id>com.slmanju.builderpattern</id>
+  <name>Java Builder Pattern</name>
+  <vendor url="https://github.com/slmanju/idea-plugin-builder-pattern">Manjula Jayawardana</vendor>
+
+  <description>
+    <![CDATA[
+      This plugin generates standard builder pattern.
+    ]]>
+  </description>
+
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="com.slmanju.builderpattern.BuilderPatternAction"/>
+  </extensions>
+
+  <actions>
+    <group id="builder-group" text="Standard Builder Pattern">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <separator/>
+      <action id="builder-group.builder" text="Generate Builder" class="com.slmanju.builderpattern.BuilderPatternAction"/>
+    </group>
+  </actions>
+</idea-plugin>
